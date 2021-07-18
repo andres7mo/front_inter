@@ -1,0 +1,37 @@
+<div *ngIf="!activo; else loggedOut">
+  <div class="container-fluid rounded" style="background-color: rgba(0, 255, 255, 0.227);">
+
+    <!------------LOGIN-------->
+    <div class="row ">
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4 rounded" style="border: black 2px solid;">
+            <div class="row ">
+              <div align="center"> <img src="https://i.ibb.co/jkTn3jh/6200106830-363053.jpg" class="img-fluid "
+                  class="rounded" style=" width: 200px; margin-block-end: 10px; margin-top: 10px; "></div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="row" style="margin-top: 10px; margin-left: 4px; margin-block-end: 10px;">
+                <button  type="button" class="btn btn-primary" (click)="auth()">LOGGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <app-menu></app-menu>
+</ng-template>
